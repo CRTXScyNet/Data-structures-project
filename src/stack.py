@@ -9,7 +9,6 @@ class Node:
         """
         self.data = data
         self.next_node = next_node
-        pass
 
 
 class Stack:
