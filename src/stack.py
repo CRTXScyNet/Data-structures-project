@@ -7,9 +7,13 @@ class Node:
 
         :param data: данные, которые будут храниться в узле
         """
-        self.data = data
+        self.__data = data
         self.next_node = next_node
         pass
+
+    @property
+    def data(self):
+        return self.__data
 
 
 class Stack:
@@ -17,7 +21,7 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        self.top = None
+        self.__top = None
 
     def push(self, data):
         """
@@ -27,7 +31,7 @@ class Stack:
         """
 
         node = Node(data, self.top)
-        self.top = node
+        self.__top = node
 
     def pop(self):
         """
@@ -39,5 +43,9 @@ class Stack:
             return None
         elif isinstance(self.top, Node):
             node = self.top
-            self.top = self.top.next_node
+            self.__top = self.top.next_node
             return node.data
+
+    @property
+    def top(self):
+        return self.__top
