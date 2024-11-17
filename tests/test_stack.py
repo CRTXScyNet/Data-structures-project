@@ -10,8 +10,8 @@ class TestNode(unittest.TestCase):
         node = Node('a', None)
         node2 = Node('b', node)
 
-        self.assertEqual(node.__data, 'a')
-        self.assertEqual(node2.__data, 'b')
+        self.assertEqual(node.data, 'a')
+        self.assertEqual(node2.data, 'b')
         self.assertEqual(node.next_node, None)
         self.assertEqual(node2.next_node, node)
         with self.assertRaises(AttributeError):
@@ -24,15 +24,15 @@ class TestStack(unittest.TestCase):
         stack = Stack()
         stack.push('a')
 
-        self.assertEqual(stack.top.__data, 'a')
+        self.assertEqual(stack.top.data, 'a')
 
         stack.push('b')
 
-        self.assertEqual(stack.top.__data, 'b')
+        self.assertEqual(stack.top.data, 'b')
 
         stack.push('c')
 
-        self.assertEqual(stack.top.__data, 'c')
+        self.assertEqual(stack.top.data, 'c')
 
         self.assertEqual(stack.pop(), 'c')
 
