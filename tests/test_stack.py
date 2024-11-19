@@ -66,3 +66,12 @@ class TestStack(unittest.TestCase):
 
         # данные удаленного элемента
         self.assertEqual(data, 'data2')
+
+    def test_str(self):
+        stack = Stack()
+        stack.push('sss')
+        stack.push('adfasdf')
+        stack.push('wssdfksss')
+        stack.push('asdf23342dsf')
+
+        self.assertEqual(str(stack), 'asdf23342dsf\nwssdfksss\nadfasdf\nsss')
