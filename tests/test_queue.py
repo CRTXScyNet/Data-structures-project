@@ -27,6 +27,17 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.head.data, 'data1' )
         self.assertEqual(queue.tail.data, 'data3' )
 
+    def test_dequeue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        queue.enqueue('data3')
+
+        self.assertEqual(queue.dequeue(), 'data1')
+        self.assertEqual(queue.dequeue(), 'data2')
+        self.assertEqual(queue.dequeue(), 'data3')
+        self.assertIsNone(queue.dequeue())
+
     def test_str(self):
         queue = Queue()
         queue.enqueue('data1')
@@ -34,3 +45,6 @@ class TestQueue(unittest.TestCase):
         queue.enqueue('data3')
 
         self.assertEqual(str(queue), 'data1\ndata2\ndata3')
+
+        queue.enqueue('data4')
+        self.assertEqual(str(queue), 'data1\ndata2\ndata3\ndata4')

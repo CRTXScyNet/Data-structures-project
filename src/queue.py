@@ -1,3 +1,6 @@
+from contextlib import nullcontext
+
+
 class Node:
     """Класс для узла очереди"""
 
@@ -54,6 +57,10 @@ class Queue:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is not None:
+            result = self.head.data
+            self.head = self.head.next_node
+            return result
+        return None
 
 

@@ -62,7 +62,7 @@ class TestStack(unittest.TestCase):
         data = stack.pop()
 
         # теперь последний элемента содержит данные data1
-        self.assertEqual(stack.top.__data, 'data1')
+        self.assertEqual(stack.top.data, 'data1')
 
         # данные удаленного элемента
         self.assertEqual(data, 'data2')
