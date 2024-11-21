@@ -45,3 +45,6 @@ class TestQueue(unittest.TestCase):
         queue.enqueue('data3')
 
         self.assertEqual(str(queue), 'data1\ndata2\ndata3')
+
+        queue.enqueue('data4')
+        self.assertEqual(str(queue), 'data1\ndata2\ndata3\ndata4')
